@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "FFCS.OOO",
+	"version": "1.0",
+
+	"description": "Scrapes data from VTOP so that you can use smart features in FFCS.OOO",
+
+	"permissions": [
+		"webRequest",
+		"<all_urls>",
+		"cookies"
+	],
+
+	"background": {
+		"scripts": [ "ffcs-background.js" ]
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "https://vtop.vit.ac.in/vtop/initialProcess" ],
+			"js": [ "ffcs.js" ]
+		}
+	]
+}
