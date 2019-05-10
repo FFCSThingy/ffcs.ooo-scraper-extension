@@ -8,9 +8,10 @@
 	"permissions": [
 		"webRequest",
 		"<all_urls>",
-		"cookies"
+		"cookies",
+		"activeTab"
 	],
-
+	"web_accessible_resources": ["injected.js"],
 	"background": {
 		"scripts": [ "ffcs-background.js" ]
 	},
@@ -18,7 +19,7 @@
 	"content_scripts": [
 		{
 			"matches": [ "https://vtop.vit.ac.in/vtop/initialProcess" ],
-			"js": [ "ffcs.js" ]
+			"js": [ "jquery.min.js","ffcs.js" ]
 		}
 	]
 }
