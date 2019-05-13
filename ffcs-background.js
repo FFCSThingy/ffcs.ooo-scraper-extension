@@ -3,7 +3,8 @@ chrome.runtime.onMessage.addListener(
         // send `message` to server;
         // ajax
         // something
-        // TODO: add some sort of auth
-        sendResponse("OK");
+		// TODO: add some sort of auth
+		sendResponse(message);
+		// sendResponse("OK");
     }
 );
