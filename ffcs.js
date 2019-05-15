@@ -27,6 +27,9 @@ function loadAndSend(urlPattern) {
 
 		},
 		error: function (request, textStatus, errorThrown) {
+			console.log(urlPattern);
+			console.log(errorThrown);
+			console.log(textStatus);
 			console.log("Error");
 		}
 	});
