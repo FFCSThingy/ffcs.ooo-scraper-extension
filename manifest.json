@@ -4,14 +4,17 @@
 	"version": "1.0",
 
 	"description": "Scrapes data from VTOP so that you can use smart features in FFCS.OOO",
-
+	"browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "FFCS.ooo"
+    },
 	"permissions": [
 		"webRequest",
-		"<all_urls>",
-		"cookies",
-		"activeTab"
+		"https://ffcs.ooo/*",
+		"https://vtop.vit.ac.in/*",
+		"cookies"
 	],
-	"web_accessible_resources": ["injected.js"],
+	"web_accessible_resources": ["injected.js","logo.png"],
 	"background": {
 		"scripts": [ "ffcs-background.js", "jquery.min.js" ]
 	},

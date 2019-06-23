@@ -1,17 +1,9 @@
 chrome.runtime.onMessage.addListener(
     async function(message, sender, sendResponse) {
-		$.post('http://localhost:3001/ext/processExtensionData', message, async function(data) {
-			// sendResponse(message.url);
-			// var resp = await data;	
+		$.post('https://ffcs.ooo/ext/processExtensionData', message, async function(data) {
+			console.log(message);
 			sendResponse(data);
 			sendResponse("OK");
 		});
-
-        // send `message` to server;
-        // ajax
-        // something
-		// TODO: add some sort of auth
-		// sendResponse(data);
-		// sendResponse("OK");
     }
 );

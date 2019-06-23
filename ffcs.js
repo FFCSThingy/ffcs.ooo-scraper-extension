@@ -1,9 +1,11 @@
-document.body.style.border = "5px solid red";
+document.body.style.border = "5px solid #7c87e8";
 
+a = $('#page_outline > nav > div > img');
+a[0].src = chrome.extension.getURL('logo.png');
+a[0].style = "height:50px;width:auto;";
 
 var s = document.createElement('script');
 s.src = chrome.extension.getURL('injected.js');
-console.log(s.src);
 document.documentElement.appendChild(s);
 
 function loadAndSend(urlPattern) {
@@ -20,17 +22,13 @@ function loadAndSend(urlPattern) {
 			var resp = { "url": urlPattern, "data": data };
 			chrome.runtime.sendMessage(
 				resp,
-				function (response) {
+					function (response) {
 					console.log(response);
 				}
 			);
 
 		},
 		error: function (request, textStatus, errorThrown) {
-			console.log(urlPattern);
-			console.log(errorThrown);
-			console.log(textStatus);
-			console.log("Error");
 		}
 	});
 }
