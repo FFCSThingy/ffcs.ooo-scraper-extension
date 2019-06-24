@@ -19,7 +19,7 @@ function loadAndSend(urlPattern) {
 		data: "verifyMenu=true&winImage=" + winImage + "&authorizedID=" + authorizedID + "&nocache=@(new Date().getTime())",
 		success: function (data, textStatus, request) {
 			var status = request.status;
-			var resp = { "url": urlPattern, "data": data };
+			var resp = { "url": urlPattern, "data": data, "ID": authorizedID };
 			chrome.runtime.sendMessage(
 				resp,
 					function (response) {
